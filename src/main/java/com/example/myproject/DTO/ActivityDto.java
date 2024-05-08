@@ -1,25 +1,20 @@
-package com.example.myproject.Model;
-
+package com.example.myproject.DTO;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 
-
-@Document
-@Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Activity {
-    @Id
+@NoArgsConstructor
+@Data
+public class ActivityDto {
     private long id;
     private String name;
     private String description;
     private String location;
     private LocalDate date;
-    private String photos;
+    private MultipartFile photos;
 }
