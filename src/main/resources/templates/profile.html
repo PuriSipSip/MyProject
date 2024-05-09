@@ -21,44 +21,14 @@
         </ul>
 
         <div class="col-md-3 text-end">
-            <a th:href="@{/profile}">
             <button type="button" class="btn btn-outline-primary me-2">2210517101002</button>
-            </a>
-
             <a th:href="@{/}"> <!-- กดเพื่อ Logout ออกจากระบบ -->
-            <button type="button" class="btn btn-primary">Logout</button>
+                <button type="button" class="btn btn-primary">Logout</button>
             </a>
         </div>
 
     </header>
-    <!-- Loop through activities and render each one -->
-    <div class="container">
-        <h2>Activities</h2>
-        <div class="row">
-            <!-- Loop through activities and render each one -->
-            <div th:each="activity : ${activities}" class="col-md-4 mb-3">
-                <div class="card" style="width: 100%;">
 
-                    <img th:src="@{'/images/' + ${activity.photos}}"
-                         alt="..." width="100">
-
-
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${activity.name}">Card title</h5>
-                        <p class="card-text" th:text="${activity.description}">Some quick example text to build on the
-                            card title and make up the bulk of the card's content.</p>
-                    </div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item" th:text="${activity.location}">Location</li>
-                        <li class="list-group-item" th:text="${activity.date}">Date</li>
-                    </ul>
-                    <div class="card-footer text-end">
-                        <a href="#" class="btn btn-primary">Join link</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
 </div>
 </body>

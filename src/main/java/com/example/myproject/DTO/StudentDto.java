@@ -5,18 +5,16 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
 
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
+@Setter
 @Getter
-
-public class ActivityDto {
+public class StudentDto {
     private String id;
     private String name;
     private String description;
     private String location;
     private LocalDate date;
     private MultipartFile photos;
-
 }
