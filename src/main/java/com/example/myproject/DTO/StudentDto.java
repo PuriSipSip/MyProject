@@ -1,9 +1,12 @@
 package com.example.myproject.DTO;
 
+import com.example.myproject.Model.Activity;
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -11,10 +14,13 @@ import java.time.LocalDate;
 @Setter
 @Getter
 public class StudentDto {
-    private String id;
-    private String name;
-    private String description;
-    private String location;
-    private LocalDate date;
-    private MultipartFile photos;
+    @Id
+    // รหัสนักศึกษา
+    private String studentId;
+    // ชื่อ
+    private String firstName;
+    // นามสกุล
+    private String lastName;
+    // กิจกรรมที่เข้าร่วม
+    private List<Activity> joinedActivities;
 }

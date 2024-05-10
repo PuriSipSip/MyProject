@@ -40,7 +40,7 @@
                 <div class="card" style="width: 100%;">
 
                     <img th:src="@{'/images/' + ${activity.photos}}"
-                         alt="..." width="100">
+                         alt="..." class="card-img-top">
 
 
                     <div class="card-body">
@@ -53,7 +53,28 @@
                         <li class="list-group-item" th:text="${activity.date}">Date</li>
                     </ul>
                     <div class="card-footer text-end">
-                        <a href="#" class="btn btn-primary">Join link</a>
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#joinActivityModal">
+                            Join
+                        </button>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="joinActivityModal" tabindex="-1" aria-labelledby="joinActivityModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="joinActivityModalLabel">ลงทะเบียนเข้ากิจกรรมสำเร็จ</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    You have successfully joined the activity!
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -65,4 +86,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
+
+<style>
+    .card-img-top {
+        width: 100%;   /* ขยายรูปภาพให้กว้างเต็มกรอบของการ์ด */
+        height: auto;  /* ความสูงจะปรับตัวอัตโนมัติตามอัตราส่วนของภาพ */
+        object-fit: cover; /* รูปภาพจะครอบคลุมพื้นที่กำหนดโดยอาจตัดส่วนที่เกินออก */
+    }
+</style>
 </html>
